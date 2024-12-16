@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: Notebook
+
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 2MB
+      max-request-size: 10MB
+
+  datasource:
+    url: jdbc:postgresql://207.154.249.159:5433/mood_tracker
+    username: postgres
+    password: gulkaiyr13
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: timuribragimov668@gmail.com
+    password: cslp xflw iqfb peoi
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+
+
+cloudinary:
+  cloud-name: dpew8gvuf
+  api-key: 779985949597189
+  api-secret: NMOqj7hoTW7DRMKH6VlJW1mVL1U
+
+jwt:
+  secret: ${JWT_SECRET_KEY:your-very-secure-and-random-secret-key-1234567890!@#$%^&*()}
+  expiration: ${JWT_EXPIRATION_MILLIS:3600000}
+  refreshExpiration: ${JWT_REFRESH_EXPIRATION_MILLIS:3600000}
+  resetPasswordExpiration: ${JWT_RESET_PASSWORD_EXPIRATION_MILLIS:900000}
+
+server:
+  port: 8082
+  address: 0.0.0.0
